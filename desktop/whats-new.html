@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What's New</title>
+    <style>
+      :root {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --ink: #071430;
+        --muted: #66708b;
+        --line: #dbe2ee;
+        --red: #ef0037;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        padding: 32px;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 86% 6%, rgba(239, 0, 55, 0.1), transparent 18rem),
+          #f6f8fc;
+      }
+
+      main {
+        display: grid;
+        gap: 18px;
+      }
+
+      .hero,
+      .entry {
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: #fff;
+        box-shadow: 0 18px 50px rgba(7, 20, 48, 0.08);
+      }
+
+      img {
+        width: 72px;
+        height: 72px;
+        object-fit: contain;
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        margin-top: 12px;
+        font-size: 42px;
+        letter-spacing: -0.03em;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p,
+      li {
+        color: var(--muted);
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      ul {
+        margin: 14px 0 0;
+        padding-left: 22px;
+      }
+
+      button {
+        min-height: 52px;
+        border: 0;
+        border-radius: 999px;
+        color: #fff;
+        background: var(--red);
+        font: inherit;
+        font-weight: 950;
+        cursor: pointer;
+        box-shadow: 0 18px 38px rgba(239, 0, 55, 0.18);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <img src="./assets/signflow-logo.png" alt="Buxton SignFlow" />
+        <h1>What's New</h1>
+        <p id="versionLine">Loading release notes...</p>
+      </section>
+      <section id="entries"></section>
+      <button type="button" onclick="window.close()">Got It</button>
+    </main>
+    <script>
+      (async function () {
+        const data = await window.signFlowDesktop.getWhatsNew();
+        const entries = data.history || [];
+        document.getElementById("versionLine").textContent = `Buxton SignFlow ${data.currentVersion}`;
+        document.getElementById("entries").innerHTML = entries
+          .map((entry) => {
+            const items = (entry.highlights || []).map((item) => `<li>${item}</li>`).join("");
+            return `
+              <article class="entry">
+                <h2>${entry.version} - ${entry.date || ""}</h2>
+                <ul>${items}</ul>
+              </article>
+            `;
+          })
+          .join("");
+      })();
+    </script>
+  </body>
+</html>

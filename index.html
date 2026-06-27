@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#05050b" />
+    <title>Riftbound</title>
+  </head>
+  <body>
+    <canvas id="gameCanvas" aria-label="Riftbound game canvas"></canvas>
+
+    <div id="appShell">
+      <header id="hud" class="hud hidden">
+        <div class="hud-block">
+          <span id="hudLevel">Mission</span>
+          <strong id="hudRank">Rank D</strong>
+        </div>
+        <div class="progress-frame" aria-label="Mission progress">
+          <div id="progressFill"></div>
+          <span id="progressText">0%</span>
+        </div>
+        <div class="hud-block hud-stats">
+          <span id="hudSeals">0 Seals</span>
+          <span id="hudAttempts">Attempt 1</span>
+        </div>
+        <button id="pauseButton" class="icon-button" type="button" title="Pause">II</button>
+      </header>
+
+      <section id="loadingScreen" class="screen active">
+        <div class="logo-mark"></div>
+        <p class="overline">Cursed energy forming</p>
+        <h1>Riftbound</h1>
+      </section>
+
+      <section id="mainMenu" class="screen menu-screen">
+        <div class="brand-stack">
+          <div class="logo-mark large"></div>
+          <p class="overline">Spiritual Exorcist Academy File 07</p>
+          <h1>Riftbound</h1>
+          <p class="tagline">One-button supernatural rhythm platforming through neon domains and broken city rooftops.</p>
+        </div>
+        <nav class="menu-grid" aria-label="Main menu">
+          <button class="angled primary" data-action="levelSelect">Begin Mission</button>
+          <button class="angled" data-action="quickTraining">Training Mode</button>
+          <button class="angled" data-action="customize">Spirit Contracts</button>
+          <button class="angled" data-action="archive">Curse Archive</button>
+          <button class="angled" data-action="editor">Level Editor</button>
+          <button class="angled" data-action="settings">Settings</button>
+        </nav>
+      </section>
+
+      <section id="levelSelect" class="screen panel-screen">
+        <div class="screen-head">
+          <button class="back-button" data-action="menu">Back</button>
+          <div>
+            <p class="overline">Mission Files</p>
+            <h2>Select Contract</h2>
+          </div>
+        </div>
+        <div id="levelCards" class="level-grid"></div>
+      </section>
+
+      <section id="settingsScreen" class="screen panel-screen">
+        <div class="screen-head">
+          <button class="back-button" data-action="menu">Back</button>
+          <div>
+            <p class="overline">Cursed-Tech Terminal</p>
+            <h2>Settings</h2>
+          </div>
+        </div>
+        <div class="settings-grid">
+          <label class="terminal-row">
+            <span>Music Volume</span>
+            <input id="musicVolume" type="range" min="0" max="1" step="0.01" />
+          </label>
+          <label class="terminal-row">
+            <span>SFX Volume</span>
+            <input id="sfxVolume" type="range" min="0" max="1" step="0.01" />
+          </label>
+          <label class="terminal-row switch-row">
+            <span>Mute</span>
+            <input id="muteToggle" type="checkbox" />
+          </label>
+          <button id="resetSave" class="angled danger" type="button">Purge Archive</button>
+        </div>
+      </section>
+
+      <section id="customizeScreen" class="screen panel-screen">
+        <div class="screen-head">
+          <button class="back-button" data-action="menu">Back</button>
+          <div>
+            <p class="overline">Spirit Contracts</p>
+            <h2>Customize Runner</h2>
+          </div>
+        </div>
+        <div class="custom-grid">
+          <div>
+            <h3>Unlocked Forms</h3>
+            <div id="skinList" class="skin-list"></div>
+          </div>
+          <div class="terminal-card">
+            <label>Primary Aura <input id="primaryColor" type="color" /></label>
+            <label>Secondary Aura <input id="secondaryColor" type="color" /></label>
+            <label>Technique Trail
+              <select id="trailType">
+                <option value="ribbon">Ribbon</option>
+                <option value="embers">Embers</option>
+                <option value="slash">Slash</option>
+                <option value="sigils">Sigils</option>
+              </select>
+            </label>
+            <label>Death Effect
+              <select id="deathEffect">
+                <option value="shatter">Shatter</option>
+                <option value="smoke">Cursed Smoke</option>
+                <option value="flare">Aura Flare</option>
+              </select>
+            </label>
+            <label>Glow Intensity <input id="glowIntensity" type="range" min="0.4" max="1.6" step="0.05" /></label>
+          </div>
+        </div>
+      </section>
+
+      <section id="archiveScreen" class="screen panel-screen">
+        <div class="screen-head">
+          <button class="back-button" data-action="menu">Back</button>
+          <div>
+            <p class="overline">Curse Archive</p>
+            <h2>Stats</h2>
+          </div>
+        </div>
+        <div id="archiveStats" class="archive-grid"></div>
+      </section>
+
+      <section id="editorScreen" class="screen editor-screen">
+        <div class="editor-bar">
+          <button class="back-button" data-action="menu">Back</button>
+          <div class="palette" id="editorPalette"></div>
+          <label>Background <input id="editorBg" type="color" value="#080817" /></label>
+          <label>BPM <input id="editorBpm" type="number" min="70" max="220" value="144" /></label>
+          <button class="angled small" id="editorSave" type="button">Save</button>
+          <button class="angled small" id="editorLoad" type="button">Load</button>
+          <button class="angled small" id="editorExport" type="button">Export</button>
+          <button class="angled small" id="editorImport" type="button">Import</button>
+          <button class="angled small primary" id="editorTest" type="button">Test</button>
+        </div>
+        <textarea id="editorJson" spellcheck="false" aria-label="Level JSON"></textarea>
+      </section>
+
+      <section id="missionOverlay" class="mission-overlay hidden">
+        <div class="result-card">
+          <p id="overlayKicker" class="overline">Mission</p>
+          <h2 id="overlayTitle">Curse Cleared.</h2>
+          <p id="overlayBody"></p>
+          <div class="result-actions">
+            <button class="angled primary" id="resumeButton" type="button">Resume</button>
+            <button class="angled" id="restartButton" type="button">Restart</button>
+            <button class="angled" data-action="levelSelect" type="button">Missions</button>
+            <button class="angled" data-action="menu" type="button">Menu</button>
+          </div>
+        </div>
+      </section>
+
+      <div id="touchControls" class="touch-controls hidden" aria-label="Touch controls">
+        <button id="touchLeft" type="button">Left</button>
+        <button id="touchJump" type="button">Jump</button>
+        <button id="touchRight" type="button">Right</button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

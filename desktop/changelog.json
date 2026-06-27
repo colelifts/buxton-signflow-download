@@ -1,0 +1,14 @@
+[
+  {
+    "version": "1.0.0",
+    "date": "2026-06-26",
+    "title": "First Buxton SignFlow desktop release",
+    "highlights": [
+      "Added the downloadable Windows and macOS desktop app foundation.",
+      "Added secure Electron settings with a safe preload bridge.",
+      "Added app icon, splash screen, offline fallback, and desktop notifications.",
+      "Added update-check structure through GitHub Releases.",
+      "Added diagnostics, download handling, and window-size memory."
+    ]
+  }
+]

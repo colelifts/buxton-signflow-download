@@ -1,0 +1,82 @@
+{
+  "name": "buxton-signflow",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Desktop client for Buxton SignFlow contract signing workflows.",
+  "author": "Buxton SignFlow",
+  "main": "desktop/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "electron .",
+    "build": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win nsis",
+    "dist:mac": "electron-builder --mac dmg",
+    "web:dev": "vite --host 127.0.0.1",
+    "web:open": "vite --host 127.0.0.1 --open",
+    "web:build": "tsc && vite build",
+    "web:preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "electron-updater": "^6.6.2"
+  },
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.7"
+  },
+  "build": {
+    "appId": "com.buxton.signflow",
+    "productName": "Buxton SignFlow",
+    "copyright": "Copyright (c) 2026 Buxton SignFlow",
+    "directories": {
+      "output": "dist-desktop",
+      "buildResources": "desktop/assets"
+    },
+    "files": [
+      "desktop/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "colelifts",
+        "repo": "costco-contract-generator"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "desktop/assets/icon.ico",
+      "artifactName": "Buxton SignFlow Setup ${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Buxton SignFlow",
+      "uninstallDisplayName": "Buxton SignFlow"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "desktop/assets/icon.icns",
+      "category": "public.app-category.business",
+      "artifactName": "Buxton SignFlow-${version}.${ext}"
+    },
+    "dmg": {
+      "sign": false
+    }
+  }
+}
