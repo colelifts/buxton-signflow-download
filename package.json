@@ -56,7 +56,7 @@
         }
       ],
       "icon": "desktop/assets/icon.ico",
-      "artifactName": "Buxton SignFlow Setup ${version}.${ext}"
+      "artifactName": "Buxton-SignFlow-Setup-${version}.${ext}"
     },
     "nsis": {
       "oneClick": false,
