@@ -7,9 +7,9 @@ if (!app) {
 }
 
 const version = "1.0.0";
-const releaseBase = "https://github.com/colelifts/costco-contract-generator/releases/latest";
+const releaseBase = "https://github.com/colelifts/buxton-signflow-download/releases/latest";
 const windowsDownload =
-  "https://github.com/colelifts/costco-contract-generator/releases/latest/download/Buxton-SignFlow-Setup-1.0.0.exe";
+  "https://github.com/colelifts/buxton-signflow-download/releases/latest/download/Buxton-SignFlow-Setup-1.0.0.exe";
 const macDownload = releaseBase;
 
 app.innerHTML = `

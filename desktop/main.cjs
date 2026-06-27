@@ -10,7 +10,7 @@ const SHORT_NAME = "SignFlow";
 const DEFAULT_APP_URL = "https://costco-contract-generator.onrender.com";
 const APP_URL = process.env.SIGNFLOW_APP_URL || process.env.COSTCO_CONTRACT_APP_URL || DEFAULT_APP_URL;
 const RELEASE_OWNER = process.env.SIGNFLOW_RELEASE_OWNER || "colelifts";
-const RELEASE_REPO = process.env.SIGNFLOW_RELEASE_REPO || "costco-contract-generator";
+const RELEASE_REPO = process.env.SIGNFLOW_RELEASE_REPO || "buxton-signflow-download";
 const RELEASE_API_URL = `https://api.github.com/repos/${RELEASE_OWNER}/${RELEASE_REPO}/releases/latest`;
 const MIN_WINDOW = { width: 1100, height: 760 };
 
