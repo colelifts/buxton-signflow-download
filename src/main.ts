@@ -11,7 +11,7 @@ const releaseBase = "https://github.com/colelifts/buxton-signflow-download/relea
 const windowsDownload =
   "https://github.com/colelifts/buxton-signflow-download/releases/latest/download/Buxton-SignFlow-Setup-1.0.0.exe";
 const macDownload = releaseBase;
-const icon = "./icon.png";
+const sfMark = '<span class="sf-mark" aria-hidden="true">SF</span>';
 
 const activityRows = [
   ["Quote_2024-0487.pdf", "Sent to jane.doe@costco.com", "2m ago", "Sent"],
@@ -25,7 +25,7 @@ app.innerHTML = `
   <div class="site-bg" aria-hidden="true"></div>
   <header class="topbar">
     <a class="brand reveal" href="#top" aria-label="Buxton SignFlow home">
-      <span class="brand-icon"><img src="${icon}" alt="" /></span>
+      ${sfMark}
       <span class="brand-copy">
         <strong>Buxton SignFlow</strong>
         <small>Contract desktop app</small>
@@ -85,7 +85,7 @@ app.innerHTML = `
 
           <aside class="mock-sidebar">
             <div class="mock-brand">
-              <img src="${icon}" alt="" />
+              ${sfMark}
               <strong>SignFlow</strong>
             </div>
             <a class="active" href="#"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/></svg>Dashboard</a>
@@ -183,7 +183,7 @@ app.innerHTML = `
       <div class="install-art" aria-hidden="true">
         <div class="sparkle one"></div>
         <div class="sparkle two"></div>
-        <div class="cube"><img src="${icon}" alt="" /></div>
+        <div class="cube">${sfMark}</div>
         <div class="box-base"></div>
       </div>
     </section>
