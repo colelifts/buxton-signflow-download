@@ -1,0 +1,12 @@
+name = "buxton-signflow-api"
+main = "src/index.ts"
+compatibility_date = "2026-06-27"
+
+[[r2_buckets]]
+binding = "SIGNFLOW_FILES"
+bucket_name = "buxton-signflow-files"
+
+[vars]
+# Non-secret values can go here. Put secrets in `wrangler secret put`.
+APP_NAME = "Buxton SignFlow"
+
