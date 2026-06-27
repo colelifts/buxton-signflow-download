@@ -11,7 +11,12 @@ const releaseBase = "https://github.com/colelifts/buxton-signflow-download/relea
 const windowsDownload =
   "https://github.com/colelifts/buxton-signflow-download/releases/latest/download/Buxton-SignFlow-Setup-1.0.0.exe";
 const macDownload = releaseBase;
-const sfMark = '<span class="sf-mark" aria-hidden="true">SF</span>';
+const blueLogo = "./signflow-logo-blue.png";
+const logoMark = `<span class="logo-shell"><img class="logo-mark" src="${blueLogo}" alt="" /></span>`;
+const windowsIcon =
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M0 3.45 9.75 2.1v9.45H0V3.45Zm10.95-1.5L24 0v11.4H10.95V1.95ZM0 12.6h9.75v9.45L0 20.7v-8.1Zm10.95 0H24V24l-13.05-1.35V12.6Z"/></svg>';
+const appleIcon =
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.15 6.9c-.95 0-2.42-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.21 3.09 3.79 3.04 1.52-.07 2.09-.99 3.94-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.68-1.48 3.68-2.95 1.16-1.69 1.64-3.33 1.66-3.42-.04-.01-3.18-1.22-3.22-4.86-.03-3.04 2.48-4.49 2.6-4.56-1.43-2.09-3.62-2.32-4.39-2.38-2-.15-3.68 1.09-4.61 1.09ZM15.53 3.83c.84-1.01 1.4-2.43 1.25-3.83-1.21.05-2.66.81-3.53 1.82-.78.9-1.45 2.34-1.27 3.71 1.34.1 2.72-.69 3.56-1.7Z"/></svg>';
 
 const activityRows = [
   ["Quote_2024-0487.pdf", "Sent to jane.doe@costco.com", "2m ago", "Sent"],
@@ -25,7 +30,7 @@ app.innerHTML = `
   <div class="site-bg" aria-hidden="true"></div>
   <header class="topbar">
     <a class="brand reveal" href="#top" aria-label="Buxton SignFlow home">
-      ${sfMark}
+      ${logoMark}
       <span class="brand-copy">
         <strong>Buxton SignFlow</strong>
         <small>Contract desktop app</small>
@@ -51,16 +56,14 @@ app.innerHTML = `
 
         <div class="hero-actions reveal" id="install">
           <a class="download-button primary" href="${windowsDownload}">
-            <span class="button-icon windows" aria-hidden="true">
-              <i></i><i></i><i></i><i></i>
-            </span>
+            <span class="button-icon windows">${windowsIcon}</span>
             <span>
               Download for Windows
               <small>Installer .exe - v${version}</small>
             </span>
           </a>
           <a class="download-button secondary" href="${macDownload}">
-            <span class="button-icon apple" aria-hidden="true"></span>
+            <span class="button-icon apple">${appleIcon}</span>
             <span>
               Download for Mac
               <small>Available from releases</small>
@@ -85,7 +88,7 @@ app.innerHTML = `
 
           <aside class="mock-sidebar">
             <div class="mock-brand">
-              ${sfMark}
+              ${logoMark}
               <strong>SignFlow</strong>
             </div>
             <a class="active" href="#"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/></svg>Dashboard</a>
@@ -183,7 +186,7 @@ app.innerHTML = `
       <div class="install-art" aria-hidden="true">
         <div class="sparkle one"></div>
         <div class="sparkle two"></div>
-        <div class="cube">${sfMark}</div>
+        <div class="cube">${logoMark}</div>
         <div class="box-base"></div>
       </div>
     </section>

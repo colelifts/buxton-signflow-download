@@ -91,7 +91,7 @@ a {
   gap: 14px;
 }
 
-.sf-mark,
+.logo-shell,
 .button-icon,
 .feature-icon,
 .shield-icon {
@@ -101,18 +101,21 @@ a {
   flex: 0 0 auto;
 }
 
-.sf-mark {
+.logo-shell {
   width: 50px;
   height: 50px;
   border-radius: 13px;
-  color: #fff;
   background:
     radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.35), transparent 18px),
-    linear-gradient(145deg, #455cff, #223bdc);
+    linear-gradient(145deg, #f7f9ff, #e9efff);
   box-shadow: 0 16px 34px rgba(47, 73, 245, 0.22);
-  font-size: 20px;
-  font-weight: 1000;
-  letter-spacing: -0.08em;
+}
+
+.logo-mark {
+  width: 42px;
+  height: 42px;
+  display: block;
+  object-fit: contain;
 }
 
 .brand-copy {
@@ -281,41 +284,15 @@ h2 {
   height: 42px;
 }
 
-.windows {
-  grid-template-columns: repeat(2, 14px);
-  gap: 4px;
+.button-icon svg {
+  width: 34px;
+  height: 34px;
+  fill: currentColor;
 }
 
-.windows i {
-  display: block;
-  width: 14px;
-  height: 14px;
-  background: currentColor;
-}
-
-.apple {
-  position: relative;
-  overflow: visible;
-}
-
-.apple::before {
-  content: "";
-  width: 29px;
+.apple svg {
+  width: 32px;
   height: 32px;
-  border-radius: 45% 45% 48% 48%;
-  background: currentColor;
-}
-
-.apple::after {
-  content: "";
-  position: absolute;
-  top: 4px;
-  right: 5px;
-  width: 11px;
-  height: 8px;
-  border-radius: 11px 0 11px 0;
-  background: currentColor;
-  transform: rotate(-28deg);
 }
 
 .trust-note {
@@ -417,11 +394,15 @@ svg {
   font-size: 15px;
 }
 
-.mock-brand .sf-mark {
+.mock-brand .logo-shell {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  font-size: 13px;
+}
+
+.mock-brand .logo-mark {
+  width: 27px;
+  height: 27px;
 }
 
 .mock-sidebar a {
@@ -733,11 +714,16 @@ svg {
   animation: cubeBob 4.2s ease-in-out infinite;
 }
 
-.cube .sf-mark {
+.cube .logo-shell {
   width: 58px;
   height: 58px;
   border-radius: 16px;
-  font-size: 22px;
+  box-shadow: none;
+}
+
+.cube .logo-mark {
+  width: 50px;
+  height: 50px;
 }
 
 .box-base {
@@ -876,16 +862,19 @@ svg {
     padding-inline: 18px;
   }
 
-  .sf-mark {
+  .logo-shell {
     width: 46px;
     height: 46px;
-    font-size: 18px;
   }
 
-  .mock-brand .sf-mark {
+  .logo-mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .mock-brand .logo-shell {
     width: 32px;
     height: 32px;
-    font-size: 13px;
   }
 
   .brand-copy strong {
