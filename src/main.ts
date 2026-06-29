@@ -10,7 +10,8 @@ const version = "1.0.0";
 const releaseBase = "https://github.com/colelifts/buxton-signflow-download/releases/latest";
 const windowsDownload =
   "https://github.com/colelifts/buxton-signflow-download/releases/latest/download/Buxton-SignFlow-Setup-1.0.0.exe";
-const macDownload = releaseBase;
+const macDownload =
+  "https://github.com/colelifts/buxton-signflow-download/releases/latest/download/Buxton.SignFlow-1.0.0.dmg";
 const blueLogo = "./signflow-logo-blue.png";
 const logoMark = `<span class="logo-shell"><img class="logo-mark" src="${blueLogo}" alt="" /></span>`;
 const windowsIcon =
@@ -66,7 +67,7 @@ app.innerHTML = `
             <span class="button-icon apple">${appleIcon}</span>
             <span>
               Download for Mac
-              <small>Available from releases</small>
+              <small>Installer .dmg - v${version}</small>
             </span>
           </a>
         </div>
