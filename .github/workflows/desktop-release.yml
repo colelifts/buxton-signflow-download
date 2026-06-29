@@ -67,7 +67,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release upload "$RELEASE_TAG" \
-            "dist-desktop/Buxton SignFlow-1.0.0.dmg" \
+            "dist-desktop/Buxton.SignFlow-1.0.0.dmg" \
             "dist-desktop/latest-mac.yml" \
             --clobber
       - uses: actions/upload-artifact@v4

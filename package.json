@@ -73,7 +73,7 @@
       ],
       "icon": "desktop/assets/icon.icns",
       "category": "public.app-category.business",
-      "artifactName": "Buxton SignFlow-${version}.${ext}"
+      "artifactName": "Buxton.SignFlow-${version}.${ext}"
     },
     "dmg": {
       "sign": false
