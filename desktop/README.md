@@ -22,7 +22,7 @@ npm run dev
 By default, the desktop app loads:
 
 ```text
-https://costco-contract-generator.onrender.com
+https://main.buxton-signflow-app.pages.dev
 ```
 
 To load another environment:
@@ -31,6 +31,10 @@ To load another environment:
 $env:SIGNFLOW_APP_URL="http://127.0.0.1:5000"
 npm run dev
 ```
+
+The Cloudflare app stays fast for login, dashboard, settings, and file storage.
+The existing Render app remains available for the Python PDF engine during the
+migration.
 
 ## Build Commands
 

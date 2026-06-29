@@ -7,7 +7,7 @@ const path = require("path");
 
 const APP_NAME = "Buxton SignFlow";
 const SHORT_NAME = "SignFlow";
-const DEFAULT_APP_URL = "https://costco-contract-generator.onrender.com";
+const DEFAULT_APP_URL = "https://main.buxton-signflow-app.pages.dev";
 const APP_URL = process.env.SIGNFLOW_APP_URL || process.env.COSTCO_CONTRACT_APP_URL || DEFAULT_APP_URL;
 const RELEASE_OWNER = process.env.SIGNFLOW_RELEASE_OWNER || "colelifts";
 const RELEASE_REPO = process.env.SIGNFLOW_RELEASE_REPO || "buxton-signflow-download";
