@@ -41,13 +41,6 @@ jobs:
             "dist-desktop/Buxton-SignFlow-Setup-1.0.0.exe.blockmap" `
             "dist-desktop/latest.yml" `
             --clobber
-      - uses: actions/upload-artifact@v5
-        with:
-          name: buxton-signflow-windows
-          path: |
-            dist-desktop/*.exe
-            dist-desktop/*.blockmap
-            dist-desktop/latest.yml
 
   macos:
     name: macOS app
@@ -70,9 +63,3 @@ jobs:
             "dist-desktop/Buxton.SignFlow-1.0.0.dmg" \
             "dist-desktop/latest-mac.yml" \
             --clobber
-      - uses: actions/upload-artifact@v5
-        with:
-          name: buxton-signflow-macos
-          path: |
-            dist-desktop/*.dmg
-            dist-desktop/latest-mac.yml
