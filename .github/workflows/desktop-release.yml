@@ -22,8 +22,8 @@ jobs:
     name: Windows installer
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -41,7 +41,7 @@ jobs:
             "dist-desktop/Buxton-SignFlow-Setup-1.0.0.exe.blockmap" `
             "dist-desktop/latest.yml" `
             --clobber
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: buxton-signflow-windows
           path: |
@@ -53,8 +53,8 @@ jobs:
     name: macOS app
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -70,7 +70,7 @@ jobs:
             "dist-desktop/Buxton.SignFlow-1.0.0.dmg" \
             "dist-desktop/latest-mac.yml" \
             --clobber
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: buxton-signflow-macos
           path: |
